@@ -12,3 +12,5 @@
 /* Keep the photographed prints comfortably inside the draggable surface. */
 .album-canvas>div{rotate:0deg}.album-canvas>div:nth-child(1){rotate:-7deg}.album-canvas>div:nth-child(2){rotate:6deg}.album-canvas>div:nth-child(3){rotate:-4deg}.album-canvas>div:nth-child(4){rotate:5deg}
 @media(min-width:701px){.album-canvas>div{width:23%}.album-canvas>div:nth-child(1){left:1%;rotate:-4deg}.album-canvas>div:nth-child(2){left:26%;rotate:3deg}.album-canvas>div:nth-child(3){left:51%;rotate:-3deg}.album-canvas>div:nth-child(4){left:76%;rotate:3deg}}
+.invite-pattern{width:35%;height:100%;right:-4%;top:0}
+@media(max-width:700px){.invite-pattern{width:45%;right:-15%;opacity:.25}}
