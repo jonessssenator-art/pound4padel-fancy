@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
-import {MotionConfig, useReducedMotion} from 'motion/react';
+import {MotionConfig} from 'motion/react';
 import TextRotate from './components/text-rotate';
 import DragElements from './components/drag-elements';
 import UnderlineToBackground from './components/underline-to-background';
@@ -11,7 +11,8 @@ const booking='https://app.pound4padel.pro';
 const photos=[{src:'player.jpg',text:'За каждым ударом - характер.'},{src:'people.jpg',text:'После игры всегда есть о чём поговорить.'},{src:'rally.jpg',text:'Ещё один мяч. Ещё одна попытка.'},{src:'team.jpg',text:'Здесь собирается своя команда.'}];
 function Arrow({down=false}:{down?:boolean}){return <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true" style={{transform:down?'rotate(90deg)':undefined}}><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.7"/></svg>}
 function App(){
- const reduce=useReducedMotion(); const [paused,setPaused]=useState(false); const [menu,setMenu]=useState(false); const [drag,setDrag]=useState(false); const [reset,setReset]=useState(0); const [mode,setMode]=useState(0);
+ const [reduce,setReduce]=useState(()=>matchMedia('(prefers-reduced-motion: reduce)').matches);
+ useEffect(()=>{const media=matchMedia('(prefers-reduced-motion: reduce)');const update=()=>setReduce(media.matches);media.addEventListener('change',update);return()=>media.removeEventListener('change',update)},[]); const [paused,setPaused]=useState(false); const [menu,setMenu]=useState(false); const [drag,setDrag]=useState(false); const [reset,setReset]=useState(0); const [mode,setMode]=useState(0);
  const still=!!reduce||paused; const menuRef=useRef<HTMLButtonElement>(null);
  useEffect(()=>{const q=matchMedia('(hover: hover) and (pointer: fine)');const update=()=>setDrag(q.matches && window.innerWidth > 700);update();q.addEventListener('change',update);window.addEventListener('resize',update);return()=>{q.removeEventListener('change',update);window.removeEventListener('resize',update)}},[]);
  useEffect(()=>{const close=(e:KeyboardEvent)=>{if(e.key==='Escape'){setMenu(false);menuRef.current?.focus()}};document.addEventListener('keydown',close);return()=>document.removeEventListener('keydown',close)},[]);
