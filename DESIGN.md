@@ -3,3 +3,5 @@ Persuade / experimental club homepage. Pinned sports poster: the blue courts of 
 Brand: #1448A3 primary blue, #183269 deep blue, #D4352C red action, #DFD8C6 beige, #211F20 graphite. Involve variable font from supplied assets. Original logo retains proportions and full opacity.
 The random direction's split wordmark is overridden by brandbook logo integrity; full original logo in navigation, separate editorial headline overlays the photograph. Generic coast photos are overridden by real supplied club photography. Natural scrolling; no Lenis/GSAP/Vanta needed for selected effects.
 Fancy: text-rotate, drag-elements, underline-to-background, vendored from danielpetho/fancy main on 2026-11-18 with MIT license. Reduced motion, manual pause, keyboard and touch alternatives. Text animation provides sporting invitation; gallery drag is optional exploration. Navigation stays immediately usable.
+
+Effects playground: contained interactive demo after community, before contacts. Same palette/type; six labeled selectable specimens, one moving at a time. Real source links, replay/pause/speed. No additional motion in existing content.
